@@ -2,5 +2,11 @@
     width: 50%;
     margin: 0 auto;
 
+    /*вырвниывник по центру картинки*/
     text-align: center;
+}
+
+/*Вырванивание размеров картинок*/
+.itk-slider .slide-img {
+    max-width: 80%;
 }

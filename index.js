@@ -17,12 +17,26 @@ imagesUrls.push('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0v19K9We
 let currentImageIndex = 0;
 
 slideImage.src = imagesUrls[currentImageIndex];
-
+showPrevBtn.disabled = true;
 
 // functions definitions
 function onShowPrevBtnClick () {
-    console.log('prev clicked');
+    currentImageIndex--;
+    slideImage.src = imagesUrls[currentImageIndex];
+    showNextBtn.disabled = false;
+
+    //disable prev button if it needs
+    if (currentImageIndex === 0 ) {
+        showPrevBtn.disabled = true;
+    }
 }
 function onShowNextBtnClick () {
-    console.log('next clicked');
+    currentImageIndex++;
+    slideImage.src = imagesUrls[currentImageIndex];
+    showPrevBtn.disabled = false;
+
+    //disable next button if it needs
+    if (currentImageIndex === (imagesUrls.length -1) ) {
+        showNextBtn.disabled = true;
+    }
 }
