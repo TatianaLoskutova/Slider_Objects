@@ -6,9 +6,17 @@ let slider1 = {
     slideImage: document.getElementById('slide-img'),
 
     start: function () {
+        let that = this;
+
         // subscribe to events
-        this.showPrevBtn.addEventListener('click', this.onShowPrevBtnClick);
-        this.showNextBtn.addEventListener('click', this.onShowNextBtnClick);
+        this.showPrevBtn.addEventListener('click', function (e) {
+            that.onShowPrevBtnClick(e);
+        });
+        this.showNextBtn.addEventListener('click', function (e) {
+            that.onShowNextBtnClick(e);
+        });
+
+
 
         // create images array
         this.imagesUrls.push('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4j4cRWZrxY0d-2vrk4EZ-7mNPJ5N5G3xxanGU0_yH4H-qu3H6snNeJUvelYyqdt3gAfE&usqp=CAU');
@@ -17,7 +25,7 @@ let slider1 = {
         this.imagesUrls.push('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0v19K9WeehD0hm6NiDyvGoHCfKoc5h71Fcg&usqp=CAU');
 
         this.slideImage.src = this.imagesUrls[this.currentImageIndex];
-        this.showPrevBtn.disabled = true;
+        //this.showPrevBtn.disabled = true;
     },
 
     onShowPrevBtnClick: function(e) {
