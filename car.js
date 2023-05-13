@@ -1,23 +1,17 @@
-let car1 = {
-    name: 'Reno Stepway',
-    isTurnOn: false,
-    speed: 0,
-    engine: {
-        v: 1.6,
-        horsesPower: 120,
-        isTurnOn: false
-    },
-    start: function () {
-        this.isTurnOn = true;
-        this.speed = 10;
-        this.engine.isTurnOn = true;
-    }
-};
+function Car(name) {
+     this.name = name;
+     this.isTurnOn = false;
+     this.speed = 0;
+     this.engine = {
+         v: 1.6,
+         horsePower: 120,
+         isTurnOn: false
+    };
+}
 
-/*
-car1.engine.v = 23;
-window.alert(car1.engine.v);*/
-
-car1.start();
-window.alert(car1.isTurnOn);
-window.alert(car1.speed);
+Car.prototype.start = function() {
+    this.isTurnOn = true;
+    this.speed = 10;
+    this.engine.isTurnOn = true;
+    console.log(this.name, ' ', this.speed);
+}
